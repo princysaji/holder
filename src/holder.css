@@ -1,0 +1,10 @@
+.part{
+	width: 250px;
+	height: 350px;
+	margin: 60px;
+	background-color: #33F6;
+	float: left;
+}
+.title{
+	list-style: none;
+}
