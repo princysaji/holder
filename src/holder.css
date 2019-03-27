@@ -1,10 +1,17 @@
+.main{
+	background-color: #ccc;
+}
 .part{
-	width: 250px;
-	height: 350px;
+	width: 60%;
+	height: 250px;
 	margin: 60px;
+	font-size: 20px;
 	background-color: #33F6;
-	float: left;
+
 }
 .title{
 	list-style: none;
+}
+.mypost{
+	float: right;
 }
