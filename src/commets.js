@@ -9,39 +9,33 @@ class Comments extends React.Component {
         super(props);
 
         this.state = {
-            pdata: []
+            cdata: []
         };
     }
-
-    componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-
-            .then(hit => {
-                this.setState({ pdata: hit.data });
-            }).catch(error => console.log("error", error));
-    }
-    
-    singlepost = () => {
-        axios.get('http://jsonplaceholder.typicode.com/posts?userId=3')
+ componentDidMount() {
+                axios.get("https://jsonplaceholder.typicode.com/comments?postId="+this.props.match.params.id)
 
             .then(hit => {
-                this.setState({ pdata: hit.data });
-            })
-            .catch(error => console.log("error", error));
-
+                this.setState({ cdata:hit.data }); 
+            })  .catch(error => console.log("error", error));     
     }
     render() {
-
+        
         return (
-
-            <div className="main">
-                <button onClick={this.singlepost} className="mypost">My Post</button>
-           
-            {this.state.pdata.map(item=>
-                 <Post detail={item}/>
-         )}
-          
-          </div>
+            <div>
+                <h1>Comments</h1>
+                {this.state.cdata.map(comments=>
+                    <div>
+                    <div className="comment"> 
+                   <h2> Name :{comments.name}</h2>
+                   <p> Mailid  :{comments.email}</p>
+                   <p> Comments :{comments.body}</p>
+                    </div>
+                </div>
+                    
+                    )       
+                }
+              </div>
 
         );
     }

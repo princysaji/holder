@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Post from './Post.js';
-
+import {Route, Link, BrowserRouter as Router } from 'react-router-dom';
 class Mypost extends React.Component {
     constructor(props) {
         super(props);
@@ -28,25 +28,28 @@ class Mypost extends React.Component {
             .catch(error => console.log("error", error));
 
     }
+   delete = (props) =>{
+    axios.get('http://jsonplaceholder.typicode.com/posts')
 
-viewComment=(e)=>{
-    let id=e.target.id;
-    console.log({id});
-
-}
-
+            .then(hit => {
+                this.setState({ pdata: hit.data });
+            }).catch(error => console.log("error", error));
+           
+    }
 
     render() {
 
         return (
-
-            <div className="main">
+            <div>
+            <div >
+                <h2>Posts</h2>  
                 <button onClick={this.singlepost} className="mypost">My Post</button>
-           
+              
             {this.state.pdata.map(item=>
-                 <Post detail={item} comment={this.viewComment}/>
+                 <Post detail={item} delprocess={this.delete}/>
          )}
-          
+
+          </div>
           </div>
 
         );

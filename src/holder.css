@@ -1,10 +1,11 @@
 .main{
 	background-color: #ccc;
 }
+/* post css*/
 .part{
 	width: 60%;
 	height: 250px;
-	margin: 60px;
+	margin: auto;
 	font-size: 20px;
 	background-color: #33F6;
 
@@ -14,4 +15,16 @@
 }
 .mypost{
 	float: right;
+}
+/* comment css*/
+.comment{
+	width: 60%;
+	height: auto;
+	margin: 60px;
+	font-size: 20px;
+	background-color: #ccc;
+
+}
+.navs{
+	background-color: #33F6;
 }
