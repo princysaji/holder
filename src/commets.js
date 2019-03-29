@@ -12,6 +12,7 @@ class Comments extends React.Component {
             cdata: []
         };
     }
+    //comments view 
  componentDidMount() {
                 axios.get("https://jsonplaceholder.typicode.com/comments?postId="+this.props.match.params.id)
 
@@ -24,6 +25,7 @@ class Comments extends React.Component {
         return (
             <div>
                 <h1>Comments</h1>
+            {/*comments will display using map*/}
                 {this.state.cdata.map(comments=>
                     <div>
                     <div className="comment"> 
