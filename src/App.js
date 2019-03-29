@@ -11,7 +11,7 @@ class App extends React.Component {
             <Router>  {/*routing to different pages using link and route*/}
                 <div  className="main">
                         <nav className="navs">
-                            <Link to="/newpost">Newpost</Link>
+                            <Link to="/newpost" className="posthead">Newpost</Link>
                         </nav>  
                          
                     <Route path="/" exact component={Mypost}/>

@@ -28,7 +28,13 @@
 }
 .navs{
 	background-color: #33F6;
+	height: 50px;
 }
 .textdeco{
 	text-decoration: none;
+}
+.posthead
+{
+	float: right;
+	font-size: 20px;
 }

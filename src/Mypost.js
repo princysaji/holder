@@ -45,11 +45,9 @@ class Mypost extends React.Component {
         return (
             <div>
                 <div >
-                    <h2>Posts</h2>  
+                    <h2 >Posts</h2>  
                 {/*single post view using button*/}
                         <button onClick={this.singlepost} className="mypost">My Post</button>
-                    }
-                    }
                   {/*delete button and my post view using map */}
                     {this.state.pdata.map(item=>
                          <Post detail={item} delprocess={this.delete} />
